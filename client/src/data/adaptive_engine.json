@@ -1,0 +1,450 @@
+{
+  "adaptive_engine": {
+    "algorithm": "Algorithme d'apprentissage adaptatif basé sur la théorie de la réponse aux items (TRI) et les réseaux bayésiens, intégrant la répétition espacée et la modélisation de la confiance pour optimiser les parcours d'apprentissage individuels.",
+    "workflow_steps": [
+      {
+        "step": 1,
+        "name": "Évaluation Initiale",
+        "description": "Détermine le niveau de compétence initial de l'élève dans divers domaines mathématiques.",
+        "inputs": ["Questionnaire de placement", "Données de performance antérieures (si disponibles)"],
+        "outputs": ["Profil de compétence initial", "Concepts à cibler"],
+        "rules": [
+          "Si nouvel élève, administrer un test de placement adaptatif.",
+          "Si élève existant, charger le profil de compétence le plus récent."
+        ]
+      },
+      {
+        "step": 2,
+        "name": "Sélection de l'Activité",
+        "description": "Choisit l'activité la plus appropriée en fonction du profil de compétence de l'élève, des règles du programme et des objectifs d'apprentissage.",
+        "inputs": ["Profil de compétence", "Concepts à cibler", "Règles du programme", "Historique des activités"],
+        "outputs": ["Activité recommandée"],
+        "rules": [
+          "Prioriser les concepts où la maîtrise est faible.",
+          "Assurer une variété d'activités (conceptuelles, procédurales, appliquées).",
+          "Respecter les prérequis de maîtrise."
+        ]
+      },
+      {
+        "step": 3,
+        "name": "Exécution de l'Activité",
+        "description": "L'élève interagit avec l'activité sélectionnée.",
+        "inputs": ["Activité recommandée", "Entrée de l'élève"],
+        "outputs": ["Réponses de l'élève", "Temps de réponse"],
+        "rules": [
+          "Enregistrer toutes les interactions de l'élève avec l'activité."
+        ]
+      },
+      {
+        "step": 4,
+        "name": "Évaluation de la Performance",
+        "description": "Analyse les réponses de l'élève pour déterminer la justesse et l'efficacité.",
+        "inputs": ["Réponses de l'élève", "Temps de réponse", "Solution correcte"],
+        "outputs": ["Score de performance", "Type d'erreur (si applicable)"],
+        "rules": [
+          "Calculer le pourcentage de bonnes réponses.",
+          "Identifier les erreurs récurrentes ou les hésitations."
+        ]
+      },
+      {
+        "step": 5,
+        "name": "Mise à Jour du Modèle de Maîtrise",
+        "description": "Ajuste le niveau de maîtrise estimé de l'élève pour le concept ciblé.",
+        "inputs": ["Score de performance", "Modèle de maîtrise actuel"],
+        "outputs": ["Modèle de maîtrise mis à jour"],
+        "rules": [
+          "Augmenter la maîtrise en cas de succès, la diminuer en cas d'échec.",
+          "Appliquer des poids différents selon la difficulté de l'activité."
+        ]
+      },
+      {
+        "step": 6,
+        "name": "Ajustement de la Confiance",
+        "description": "Évalue et ajuste le niveau de confiance de l'élève en fonction de ses performances et de ses schémas de réponse.",
+        "inputs": ["Score de performance", "Temps de réponse", "Modèle de confiance actuel"],
+        "outputs": ["Modèle de confiance mis à jour"],
+        "rules": [
+          "Diminuer la confiance en cas d'erreurs répétées ou de temps de réponse excessif.",
+          "Augmenter la confiance en cas de succès rapides et constants."
+        ]
+      },
+      {
+        "step": 7,
+        "name": "Planification de la Répétition Espacée",
+        "description": "Détermine le moment optimal pour revoir les concepts précédemment appris afin de renforcer la rétention.",
+        "inputs": ["Modèle de maîtrise", "Modèle de confiance", "Historique de répétition"],
+        "outputs": ["Prochaines dates de révision"],
+        "rules": [
+          "Appliquer l'algorithme SuperMemo 2 (SM-2) pour calculer les intervalles de répétition.",
+          "Prioriser les concepts dont la maîtrise est stable mais qui n'ont pas été révisés récemment."
+        ]
+      },
+      {
+        "step": 8,
+        "name": "Recommandation Suivante",
+        "description": "Génère la prochaine recommandation d'activité ou de révision pour l'élève.",
+        "inputs": ["Modèle de maîtrise", "Modèle de confiance", "Prochaines dates de révision", "Règles du programme"],
+        "outputs": ["Recommandation d'activité/révision"],
+        "rules": [
+          "Équilibrer l'introduction de nouveaux concepts, la pratique et la révision.",
+          "Prendre en compte les objectifs de gamification et les préférences de l'élève."
+        ]
+      }
+    ],
+    "curriculum_rules": [
+      {
+        "rule_id": "CR-001",
+        "name": "Prérequis de Maîtrise",
+        "description": "Un élève doit maîtriser les concepts prérequis avant de pouvoir progresser vers des concepts plus avancés.",
+        "trigger": "Tentative d'accès à un concept sans maîtrise des prérequis.",
+        "action": "Rediriger l'élève vers les activités de révision des prérequis.",
+        "priority": 1
+      },
+      {
+        "rule_id": "CR-002",
+        "name": "Progression Thématique",
+        "description": "Les activités sont regroupées par thèmes mathématiques pour assurer une progression logique et cohérente.",
+        "trigger": "Achèvement d'un ensemble d'activités thématiques.",
+        "action": "Débloquer le thème suivant ou proposer une activité de synthèse.",
+        "priority": 2
+      },
+      {
+        "rule_id": "CR-003",
+        "name": "Diversité des Activités",
+        "description": "Assure que l'élève est exposé à une variété de types d'activités (conceptuelles, procédurales, appliquées) pour chaque concept.",
+        "trigger": "Séquence de 3 activités du même type pour un concept donné.",
+        "action": "Proposer une activité d'un type différent pour le même concept.",
+        "priority": 3
+      },
+      {
+        "rule_id": "CR-004",
+        "name": "Intervention Précoce",
+        "description": "Détecte les difficultés persistantes et propose des interventions ciblées.",
+        "trigger": "Score de performance inférieur à 60% sur 3 activités consécutives pour le même concept.",
+        "action": "Proposer des activités de remédiation, des indices supplémentaires ou une explication conceptuelle.",
+        "priority": 0
+      },
+      {
+        "rule_id": "CR-005",
+        "name": "Consolidation des Acquis",
+        "description": "Renforce la rétention des concepts maîtrisés par des révisions périodiques.",
+        "trigger": "Intervalle de répétition espacée atteint pour un concept maîtrisé.",
+        "action": "Proposer une activité de révision pour le concept.",
+        "priority": 4
+      }
+    ],
+    "mastery_model": {
+      "conditions": [
+        {
+          "condition": "Maîtrise Conceptuelle",
+          "threshold": "80%",
+          "measurement": "Réussite sur 3 activités consécutives de compréhension conceptuelle."
+        },
+        {
+          "condition": "Maîtrise Procédurale",
+          "threshold": "90%",
+          "measurement": "Réussite sur 5 exercices consécutifs d'application de procédures."
+        },
+        {
+          "condition": "Maîtrise Appliquée",
+          "threshold": "75%",
+          "measurement": "Réussite de 2 problèmes complexes nécessitant l'application de plusieurs concepts."
+        }
+      ],
+      "advancement_logic": "Progression vers le concept suivant ou un niveau de difficulté supérieur lorsque toutes les conditions de maîtrise sont remplies pour le concept actuel. Le système vérifie également la stabilité de la maîtrise sur une période donnée.",
+      "regression_logic": "Retour à des activités de remédiation ou à des concepts prérequis si la performance chute en dessous d'un seuil critique (ex: <50% sur 2 activités consécutives) ou si la confiance de l'élève est très faible."
+    },
+    "confidence_model": {
+      "tiers": [
+        {
+          "tier": 1,
+          "label": "Très faible",
+          "response_pattern": "Hésitation fréquente, erreurs répétées, temps de réponse très long.",
+          "system_action": "Proposer des activités de soutien, des indices visuels, des explications pas à pas."
+        },
+        {
+          "tier": 2,
+          "label": "Faible",
+          "response_pattern": "Quelques erreurs, temps de réponse moyen à long, besoin de confirmation.",
+          "system_action": "Offrir des rappels de concepts, des exercices guidés, des encouragements."
+        },
+        {
+          "tier": 3,
+          "label": "Modérée",
+          "response_pattern": "Peu d'erreurs, temps de réponse raisonnable, parfois incertain.",
+          "system_action": "Proposer des défis supplémentaires, des activités de pratique autonome."
+        },
+        {
+          "tier": 4,
+          "label": "Élevée",
+          "response_pattern": "Réponses rapides et correctes, démontre une bonne compréhension.",
+          "system_action": "Introduire de nouveaux concepts, augmenter la difficulté, proposer des activités d'enrichissement."
+        },
+        {
+          "tier": 5,
+          "label": "Très élevée",
+          "response_pattern": "Maîtrise constante, résolution de problèmes complexes avec aisance, peut expliquer les concepts.",
+          "system_action": "Proposer des projets créatifs, des problèmes ouverts, des rôles de mentorat virtuel."
+        }
+      ]
+    },
+    "spaced_repetition": {
+      "algorithm": "SuperMemo 2 (SM-2) avec ajustements pour la confiance de l'élève et la difficulté du concept.",
+      "intervals": ["1 jour", "3 jours", "7 jours", "14 jours", "30 jours", "60 jours"],
+      "adjustment_rules": [
+        "Si l'élève réussit une révision, l'intervalle suivant est multiplié par un facteur d'espacement (EF) qui augmente avec les succès consécutifs.",
+        "Si l'élève échoue une révision, l'intervalle est réinitialisé à 1 jour et l'EF est réduit.",
+        "Les intervalles sont raccourcis si la confiance de l'élève est faible, même en cas de succès.",
+        "Les intervalles sont allongés si la confiance est très élevée et la maîtrise stable."
+      ]
+    }
+  },
+  "gamification": {
+    "narrative": {
+      "world_name": "Le Royaume des Nombres Enchantés",
+      "premise": "Un monde magique où les concepts mathématiques sont des créatures et des paysages, menacé par l'Oubli Numérique. Les élèves, en tant que Gardiens des Nombres, doivent restaurer l'équilibre.",
+      "protagonist": "Le Gardien des Nombres (avatar personnalisable de l'élève)",
+      "antagonist": "Le Seigneur de l'Oubli (une entité qui efface les connaissances mathématiques)",
+      "regions": [
+        {
+          "id": "REG-001",
+          "name": "La Forêt des Chiffres",
+          "mathematical_domain": "Numération et sens du nombre (0-100)",
+          "description": "Une forêt luxuriante où les arbres portent des chiffres et les animaux se déplacent en comptant. Les élèves apprennent à reconnaître, ordonner et comparer les nombres.",
+          "unlock_condition": "Achèvement de l'évaluation initiale et maîtrise de la numération de base (0-20).",
+          "boss_challenge": "Le Grand Hibou Compteur: Résoudre des problèmes de comparaison et d'ordonnancement de grands nombres."
+        },
+        {
+          "id": "REG-002",
+          "name": "Les Montagnes de l'Addition et de la Soustraction",
+          "mathematical_domain": "Opérations arithmétiques de base (addition, soustraction)",
+          "description": "Des sommets escarpés où chaque pas nécessite de résoudre une addition ou une soustraction. Les élèves développent la fluidité des calculs.",
+          "unlock_condition": "Maîtrise de la numération jusqu'à 100 et compréhension des concepts d'ajout et de retrait.",
+          "boss_challenge": "Le Géant des Opérations: Effectuer des calculs complexes avec des nombres à deux chiffres, y compris le regroupement."
+        },
+        {
+          "id": "REG-003",
+          "name": "La Rivière de la Multiplication et de la Division",
+          "mathematical_domain": "Opérations arithmétiques avancées (multiplication, division)",
+          "description": "Une rivière sinueuse où les courants représentent les tables de multiplication et les affluents les divisions. Les élèves apprennent les faits de multiplication et de division.",
+          "unlock_condition": "Maîtrise de l'addition et de la soustraction avec des nombres à deux chiffres.",
+          "boss_challenge": "Le Kraken des Facteurs: Résoudre des problèmes de multiplication et de division à plusieurs étapes."
+        },
+        {
+          "id": "REG-004",
+          "name": "Les Plaines des Fractions",
+          "mathematical_domain": "Fractions et nombres décimaux",
+          "description": "De vastes étendues où les cultures sont divisées en parts égales, représentant les fractions. Les élèves explorent les concepts de parties d'un tout, d'équivalence et d'opérations avec les fractions.",
+          "unlock_condition": "Maîtrise des quatre opérations arithmétiques de base.",
+          "boss_challenge": "Le Dragon des Dénominateurs: Comparer, ordonner et effectuer des opérations avec des fractions et des nombres décimaux."
+        },
+        {
+          "id": "REG-005",
+          "name": "Le Labyrinthe de la Géométrie",
+          "mathematical_domain": "Géométrie et mesure",
+          "description": "Un labyrinthe complexe où chaque tour révèle une forme, un angle ou une mesure. Les élèves apprennent les propriétés des formes 2D et 3D, le périmètre, l'aire et le volume.",
+          "unlock_condition": "Maîtrise des fractions et des nombres décimaux.",
+          "boss_challenge": "Le Minotaure des Mesures: Résoudre des problèmes de géométrie et de mesure impliquant des formes complexes et des conversions d'unités."
+        },
+        {
+          "id": "REG-006",
+          "name": "Le Château de l'Algèbre Précoce",
+          "mathematical_domain": "Pensée algébrique et résolution de problèmes",
+          "description": "Un château mystérieux rempli d'énigmes et de motifs. Les élèves découvrent les bases de l'algèbre, les relations et les fonctions, et développent des stratégies de résolution de problèmes.",
+          "unlock_condition": "Maîtrise de la géométrie et de la mesure.",
+          "boss_challenge": "Le Sorcier des Variables: Résoudre des équations simples et des problèmes de mots complexes utilisant la pensée algébrique."
+        }
+      ]
+    },
+    "progression_system": {
+      "levels": [
+        {
+          "level": 1,
+          "title": "Apprenti Compteur",
+          "xp_required": 0,
+          "unlock": "Début du jeu"
+        },
+        {
+          "level": 2,
+          "title": "Explorateur Numérique",
+          "xp_required": 100,
+          "unlock": "Maîtrise de la Forêt des Chiffres"
+        },
+        {
+          "level": 3,
+          "title": "Maître des Opérations",
+          "xp_required": 300,
+          "unlock": "Maîtrise des Montagnes de l'Addition et de la Soustraction"
+        },
+        {
+          "level": 4,
+          "title": "Navigateur des Fractions",
+          "xp_required": 600,
+          "unlock": "Maîtrise de la Rivière de la Multiplication et de la Division"
+        },
+        {
+          "level": 5,
+          "title": "Architecte Géomètre",
+          "xp_required": 1000,
+          "unlock": "Maîtrise des Plaines des Fractions"
+        },
+        {
+          "level": 6,
+          "title": "Sorcier Algébrique",
+          "xp_required": 1500,
+          "unlock": "Maîtrise du Labyrinthe de la Géométrie"
+        },
+        {
+          "level": 7,
+          "title": "Grand Gardien des Nombres",
+          "xp_required": 2000,
+          "unlock": "Maîtrise du Château de l'Algèbre Précoce et défaite du Seigneur de l'Oubli"
+        }
+      ],
+      "badges": [
+        {
+          "id": "BADGE-001",
+          "name": "Compteur Rapide",
+          "description": "Terminer 10 activités de numération avec un score parfait et un temps de réponse rapide.",
+          "trigger": "10 activités de numération parfaites et rapides.",
+          "rarity": "Bronze"
+        },
+        {
+          "id": "BADGE-002",
+          "name": "Maître des Tables",
+          "description": "Maîtriser toutes les tables de multiplication jusqu'à 12.",
+          "trigger": "Maîtrise de toutes les tables de multiplication (95% de réussite).",
+          "rarity": "Argent"
+        },
+        {
+          "id": "BADGE-003",
+          "name": "Résolveur de Problèmes",
+          "description": "Résoudre 20 problèmes de mots complexes avec succès.",
+          "trigger": "20 problèmes de mots complexes résolus correctement.",
+          "rarity": "Or"
+        },
+        {
+          "id": "BADGE-004",
+          "name": "Explorateur de Régions",
+          "description": "Débloquer toutes les régions du Royaume des Nombres Enchantés.",
+          "trigger": "Toutes les régions débloquées.",
+          "rarity": "Platine"
+        },
+        {
+          "id": "BADGE-005",
+          "name": "Persévérant",
+          "description": "Maintenir une série de 7 jours d'activités consécutives.",
+          "trigger": "Série de 7 jours d'activités.",
+          "rarity": "Bronze"
+        }
+      ],
+      "achievements": [
+        {
+          "id": "ACH-001",
+          "name": "Premier Pas",
+          "description": "Terminer la première activité.",
+          "condition": "Achèvement de la première activité."
+        },
+        {
+          "id": "ACH-002",
+          "name": "Conquérant de Boss",
+          "description": "Vaincre un boss de région.",
+          "condition": "Vaincre n'importe quel boss de région."
+        },
+        {
+          "id": "ACH-003",
+          "name": "Collectionneur de Badges",
+          "description": "Obtenir 5 badges différents.",
+          "condition": "Obtention de 5 badges uniques."
+        },
+        {
+          "id": "ACH-004",
+          "name": "Maître Absolu",
+          "description": "Atteindre le niveau de maîtrise le plus élevé dans tous les domaines mathématiques.",
+          "condition": "Maîtrise de tous les concepts du programme."
+        }
+      ]
+    },
+    "daily_system": {
+      "daily_challenge": "Une activité mathématique unique proposée chaque jour, souvent liée à un concept récemment appris ou à une révision.",
+      "streak_rewards": [
+        {
+          "days": 1,
+          "reward": "5 Pièces d'Or (monnaie du jeu)"
+        },
+        {
+          "days": 3,
+          "reward": "10 Pièces d'Or + 1 Indice Magique"
+        },
+        {
+          "days": 7,
+          "reward": "20 Pièces d'Or + 1 Badge de Persévérance (Bronze)"
+        },
+        {
+          "days": 14,
+          "reward": "50 Pièces d'Or + 1 Objet Cosmétique Rare"
+        },
+        {
+          "days": 30,
+          "reward": "100 Pièces d'Or + 1 Titre Spécial pour l'avatar"
+        }
+      ],
+      "weekly_quest": "Un ensemble de défis mathématiques plus longs et plus complexes à accomplir sur une semaine, récompensant les élèves avec des objets rares et de l'XP bonus."
+    }
+  },
+  "exercise_library": {
+    "activity_types": [
+      {
+        "type": "Identification de Nombres",
+        "description": "Reconnaître et nommer des nombres dans différents formats (chiffres, mots, représentations visuelles).",
+        "cpa_level": "Concret, Pictorial, Abstrait",
+        "suitable_for": ["Maternelle", "1re année", "2e année"],
+        "example": "Associer le chiffre '5' à cinq pommes ou au mot 'cinq'."
+      },
+      {
+        "type": "Comparaison et Ordre",
+        "description": "Comparer des nombres en utilisant des symboles (<, >, =), et les ordonner de manière croissante ou décroissante.",
+        "cpa_level": "Pictorial, Abstrait",
+        "suitable_for": ["1re année", "2e année", "3e année"],
+        "example": "Placer les nombres 12, 5, 21 dans l'ordre croissant."
+      },
+      {
+        "type": "Calcul Mental",
+        "description": "Effectuer des opérations arithmétiques simples sans l'aide d'outils, en se basant sur la mémorisation et les stratégies.",
+        "cpa_level": "Abstrait",
+        "suitable_for": ["2e année", "3e année", "4e année", "5e année", "6e année"],
+        "example": "Calculer 8 + 7 ou 15 - 6."
+      },
+      {
+        "type": "Résolution de Problèmes",
+        "description": "Appliquer des concepts mathématiques pour résoudre des situations concrètes ou des problèmes de mots.",
+        "cpa_level": "Concret, Pictorial, Abstrait",
+        "suitable_for": ["Toutes les années (K-6)"],
+        "example": "Si j'ai 3 pommes et que j'en achète 2 de plus, combien en ai-je au total ?"
+      },
+      {
+        "type": "Manipulation de Fractions",
+        "description": "Représenter, comparer, simplifier et effectuer des opérations avec des fractions.",
+        "cpa_level": "Concret, Pictorial, Abstrait",
+        "suitable_for": ["3e année", "4e année", "5e année", "6e année"],
+        "example": "Utiliser des cercles de fractions pour montrer que 1/2 est égal à 2/4."
+      },
+      {
+        "type": "Géométrie et Mesure",
+        "description": "Identifier des formes, calculer des périmètres, des aires, des volumes et comprendre les unités de mesure.",
+        "cpa_level": "Concret, Pictorial, Abstrait",
+        "suitable_for": ["Toutes les années (K-6)"],
+        "example": "Mesurer la longueur d'un objet en centimètres ou identifier un carré."
+      }
+    ],
+    "design_principles": [
+      "Alignement avec le programme scolaire canadien (Maternelle à 6e année).",
+      "Progression de la représentation concrète à picturale puis abstraite (CPA).",
+      "Intégration de la résolution de problèmes et de la pensée critique.",
+      "Feedback immédiat et constructif.",
+      "Variété des formats d'activités pour maintenir l'engagement.",
+      "Accessibilité et inclusivité pour tous les apprenants.",
+      "Contexte culturellement pertinent pour les élèves canadiens."
+    ]
+  }
+}

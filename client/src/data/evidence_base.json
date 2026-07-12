@@ -1,0 +1,313 @@
+{
+  "evidence_base": {
+    "cpa_framework": {
+      "definition": "Le cadre Concret-Pictorial-Abstrait (CPA) est une approche pédagogique séquentielle pour l'enseignement des concepts mathématiques. Il débute par la manipulation d'objets concrets, progresse vers des représentations picturales (visuelles) et culmine avec la compréhension de symboles abstraits. Cette progression aide les élèves à construire une compréhension profonde et durable des concepts mathématiques.",
+      "origin": "L'approche CPA est basée sur les travaux du psychologue américain Jerome Bruner, qui a proposé trois modes de représentation de la connaissance : enactif (action-basé), iconique (image-basé) et symbolique (langage-basé). Elle a été popularisée par le mathématicien et éducateur singapourien Dr. Yeap Ban Har, et est largement utilisée dans l'enseignement des mathématiques à Singapour.",
+      "research_support": [
+        {
+          "claim": "L'approche CPA améliore la compréhension conceptuelle et la performance en résolution de problèmes chez les élèves du primaire.",
+          "evidence": "Des études ont montré que les élèves qui apprennent les mathématiques en utilisant la séquence CPA obtiennent de meilleurs résultats aux tests de compréhension conceptuelle et de résolution de problèmes que ceux qui suivent des méthodes d'enseignement traditionnelles. L'utilisation de matériel concret et de représentations visuelles aide à combler le fossé entre les manipulations physiques et la pensée abstraite.",
+          "source": "Wong, K. Y., & Lim, S. K. (2018). The Concrete-Pictorial-Abstract (CPA) approach to teaching mathematics: A review of research. Journal of Science and Mathematics Education in Southeast Asia, 41(1), 1-24.",
+          "year": 2018,
+          "implication_for_platform": "La plateforme doit intégrer des modules interactifs permettant aux élèves de manipuler des objets virtuels (concret), de visualiser des représentations graphiques (pictorial) et de travailler avec des symboles mathématiques (abstrait) de manière fluide et progressive."
+        },
+        {
+          "claim": "Le CPA est particulièrement efficace pour les élèves ayant des difficultés d'apprentissage en mathématiques.",
+          "evidence": "La nature multisensorielle du CPA fournit un soutien essentiel aux élèves qui ont du mal à saisir les concepts abstraits. En leur permettant de manipuler des objets et de voir des représentations visuelles, le CPA réduit la charge cognitive et facilite l'accès aux idées mathématiques.",
+          "source": "Miller, S. P., & Hudson, P. J. (2007). Using the Concrete-Representational-Abstract Sequence to Teach Mathematics to Students With Learning Disabilities. Learning Disabilities Research & Practice, 22(1), 1-11.",
+          "year": 2007,
+          "implication_for_platform": "La plateforme doit offrir des options de personnalisation pour ajuster le niveau de soutien concret et pictural en fonction des besoins individuels des élèves, en particulier ceux qui sont identifiés comme ayant des difficultés."
+        }
+      ],
+      "implementation_principles": [
+        {
+          "principle": "Progression séquentielle",
+          "description": "Les leçons doivent toujours commencer par le stade concret, passer au stade pictural, puis au stade abstrait. Il est crucial de ne pas sauter d'étapes et de s'assurer que l'élève maîtrise chaque étape avant de passer à la suivante.",
+          "classroom_example": "Pour enseigner l'addition, un élève utilise d'abord des blocs (concret), puis dessine les blocs (pictorial), et enfin écrit l'équation numérique (abstrait)."
+        },
+        {
+          "principle": "Matériel de manipulation pertinent",
+          "description": "Utiliser des objets concrets et des représentations picturales qui sont significatifs et pertinents pour les concepts mathématiques enseignés. Le matériel doit être facilement manipulable et visuellement clair.",
+          "classroom_example": "Pour enseigner les fractions, utiliser des pizzas découpées en parts égales (concret) ou des diagrammes circulaires (pictorial) plutôt que des objets non liés au concept."
+        },
+        {
+          "principle": "Connexion explicite entre les étapes",
+          "description": "Assurer une transition claire et explicite entre les étapes concrète, picturale et abstraite. Les enseignants doivent aider les élèves à voir les liens entre les différentes représentations du même concept.",
+          "classroom_example": "Après avoir manipulé des jetons pour résoudre un problème, l'enseignant demande aux élèves de dessiner les jetons et de montrer comment le dessin représente la manipulation, puis d'écrire l'équation correspondante."
+        },
+        {
+          "principle": "Maîtrise à chaque étape",
+          "description": "S'assurer que les élèves ont une compréhension solide et une maîtrise des concepts à chaque étape (concret, pictural, abstrait) avant de passer à la suivante. Cela peut impliquer des activités de renforcement et des évaluations formatives.",
+          "classroom_example": "Avant de passer aux équations abstraites, l'enseignant vérifie que les élèves peuvent résoudre des problèmes en utilisant uniquement des représentations concrètes et picturales."
+        }
+      ]
+    },
+    "mastery_learning": {
+      "definition": "L'apprentissage par la maîtrise est une approche pédagogique dans laquelle les élèves doivent atteindre un niveau de compréhension et de compétence prédéfini (maîtrise) dans une unité d'apprentissage avant de passer à la suivante. Cela implique un enseignement individualisé, des évaluations formatives fréquentes et des opportunités de remédiation et d'enrichissement.",
+      "bloom_model": "Le modèle d'apprentissage par la maîtrise de Benjamin Bloom est basé sur l'idée que la plupart des élèves peuvent atteindre un niveau élevé de performance scolaire si on leur donne le temps et l'aide appropriés. Il met l'accent sur l'instruction de haute qualité, l'évaluation formative, la rétroaction corrective et l'enrichissement. Le modèle de Bloom suggère que les différences de performance entre les élèves sont principalement dues à des différences dans le temps nécessaire pour apprendre, plutôt qu'à des différences d'aptitude intrinsèque.",
+      "four_conditions": [
+        {
+          "condition": "Clarté des objectifs d'apprentissage",
+          "threshold": "Les objectifs d'apprentissage doivent être clairement définis et communiqués aux élèves avant le début de l'unité. Les critères de maîtrise doivent être explicites.",
+          "rationale": "Des objectifs clairs permettent aux élèves de comprendre ce qui est attendu d'eux et de diriger leurs efforts d'apprentissage de manière efficace."
+        },
+        {
+          "condition": "Instruction de haute qualité",
+          "threshold": "L'enseignement doit être adapté aux besoins individuels des élèves, en utilisant diverses méthodes et ressources pour s'assurer que tous les élèves ont la possibilité de comprendre le matériel.",
+          "rationale": "Une instruction efficace est essentielle pour que les élèves puissent acquérir les connaissances et les compétences nécessaires pour atteindre la maîtrise."
+        },
+        {
+          "condition": "Évaluation formative et rétroaction corrective",
+          "threshold": "Des évaluations formatives régulières doivent être utilisées pour identifier les lacunes dans la compréhension des élèves. Une rétroaction corrective immédiate et spécifique doit être fournie pour guider les élèves dans leur apprentissage.",
+          "rationale": "La rétroaction formative permet aux élèves de corriger leurs erreurs et de renforcer leur compréhension avant que les lacunes ne s'accumulent."
+        },
+        {
+          "condition": "Temps suffisant et opportunités de remédiation/enrichissement",
+          "threshold": "Les élèves doivent disposer de suffisamment de temps pour atteindre la maîtrise, avec des activités de remédiation pour ceux qui n'ont pas atteint le seuil et des activités d'enrichissement pour ceux qui l'ont atteint rapidement.",
+          "rationale": "Le temps et le soutien individualisé sont cruciaux pour permettre à tous les élèves d'atteindre la maîtrise, en reconnaissant que le rythme d'apprentissage varie d'un élève à l'autre."
+        }
+      ],
+      "research_support": [
+        {
+          "claim": "L'apprentissage par la maîtrise réduit l'écart de performance entre les élèves et améliore les résultats scolaires globaux.",
+          "evidence": "Les études de Bloom ont montré que les élèves en apprentissage par la maîtrise peuvent atteindre des niveaux de performance équivalents à ceux du top 20% des élèves en enseignement traditionnel. Cela est dû à l'attention portée à la remédiation et à l'individualisation de l'apprentissage.",
+          "source": "Bloom, B. S. (1984). The 2 Sigma Problem: The Search for Methods of Group Instruction as Effective as One-to-One Tutoring. Educational Researcher, 13(6), 4-16.",
+          "year": 1984
+        },
+        {
+          "claim": "L'apprentissage par la maîtrise favorise une meilleure rétention à long terme et une attitude plus positive envers l'apprentissage.",
+          "evidence": "En s'assurant que les élèves maîtrisent chaque concept avant de progresser, l'apprentissage par la maîtrise construit une base solide de connaissances, ce qui conduit à une meilleure rétention. De plus, le succès continu et le soutien réduisent l'anxiété liée aux tests et augmentent la motivation intrinsèque.",
+          "source": "Guskey, T. R. (2007). Closing achievement gaps: Revisiting Benjamin Bloom's 'Learning for Mastery'. Journal of Advanced Academics, 19(1), 4-31.",
+          "year": 2007
+        }
+      ]
+    },
+    "confidence_based_marking": {
+      "definition": "La notation basée sur la confiance (NBC) est une méthode d'évaluation où les élèves indiquent non seulement leur réponse à une question, mais aussi leur niveau de confiance dans cette réponse. Cela permet de distinguer les erreurs dues à un manque de connaissances de celles dues à des suppositions, et encourage la métacognition et l'auto-évaluation précise.",
+      "five_tiers": [
+        {
+          "tier": 1,
+          "label": "Devinette pure",
+          "description": "L'élève n'a aucune idée de la bonne réponse et choisit au hasard. La confiance est très faible.",
+          "weight_multiplier": -1.2
+        },
+        {
+          "tier": 2,
+          "label": "Faible confiance",
+          "description": "L'élève a une légère préférence pour une réponse mais n'est pas sûr du tout. La confiance est faible.",
+          "weight_multiplier": -0.32
+        },
+        {
+          "tier": 3,
+          "label": "Confiance moyenne",
+          "description": "L'élève a une certaine connaissance ou un raisonnement partiel, mais n'est pas entièrement confiant. La confiance est modérée.",
+          "weight_multiplier": 0.1
+        },
+        {
+          "tier": 4,
+          "label": "Haute confiance",
+          "description": "L'élève est presque certain de la bonne réponse, mais il y a une petite hésitation. La confiance est élevée.",
+          "weight_multiplier": 0.54
+        },
+        {
+          "tier": 5,
+          "label": "Certitude absolue",
+          "description": "L'élève est absolument certain de la bonne réponse et peut la justifier pleinement. La confiance est maximale.",
+          "weight_multiplier": 1.0
+        }
+      ],
+      "research_support": [
+        {
+          "claim": "La notation basée sur la confiance améliore la précision de l'auto-évaluation des élèves et leur conscience métacognitive.",
+          "source": "Hassmen, P., & Hunt, D. P. (1994). Human self-assessment in multiple-choice testing. Journal of Educational Measurement, 31(2), 149-160.",
+          "year": 1994
+        },
+        {
+          "claim": "La NBC encourage les élèves à réfléchir plus profondément à leurs connaissances et à distinguer ce qu'ils savent de ce qu'ils ne savent pas.",
+          "source": "Gardner-Medwin, A. R. (2006). Confidence-based marking: Towards deeper learning and better exams. In C. Bryan & K. Clegg (Eds.), Innovative assessment in higher education (pp. 141-152). Routledge.",
+          "year": 2006
+        }
+      ]
+    },
+    "error_analysis": {
+      "taxonomy": [
+        {
+          "category": "Erreurs d'identification du type de tâches",
+          "description": "L'élève ne parvient pas à identifier correctement le type de problème ou de tâche mathématique à résoudre, ce qui conduit à l'application de stratégies inappropriées.",
+          "examples": [
+            "Mauvaise compréhension de l'habillage de la situation (éléments non mathématiques mal interprétés)",
+            "Malentendu concernant le contrat didactique (attentes de l'enseignant mal comprises)",
+            "Confusion entre deux types de tâches réalisables dans un même contexte (ex: développer au lieu de factoriser)"
+          ],
+          "remediation_approach": "Améliorer la compréhension du contexte de l'énoncé, clarifier les attentes pédagogiques, et distinguer les différents types de tâches et leurs contextes d'application."
+        },
+        {
+          "category": "Erreurs de choix de technique",
+          "description": "L'élève choisit une technique qui correspond au type général de tâche mais qui n'est pas pertinente ou utilisable pour la tâche spécifique ou le contexte donné.",
+          "examples": [
+            "Technique choisie inutilisable dans la tâche proposée (obstacle épistémologique)",
+            "Technique choisie ne permettant pas d'aboutir à une solution (ex: réciproque de Pythagore sans données suffisantes)",
+            "Technique 'non satisfaisante' (ex: addition itérée au lieu de multiplication)"
+          ],
+          "remediation_approach": "Reconnaître la pertinence du choix de la technique, expliciter son domaine de validité, et guider l'élève vers la technique la plus adaptée et efficace pour la tâche spécifique."
+        },
+        {
+          "category": "Erreurs de mise en œuvre de technique",
+          "description": "L'élève a choisi la bonne technique mais commet des erreurs lors de son application, soit en raison de la spécificité de la tâche, soit d'une mauvaise maîtrise procédurale, soit d'un malentendu didactique.",
+          "examples": [
+            "Erreur due à la spécificité de la tâche (ex: soustraction avec des zéros)",
+            "Technique non mobilisée correctement dans un cas classique (erreur procédurale pure)",
+            "Malentendu au niveau du contrat didactique (ex: ne donner qu'une seule racine d'une équation)",
+            "Erreurs de regroupement (oublier de faire la retenue, se regrouper autour d'un zéro)",
+            "Effectuer l'opération incorrecte (additionner au lieu de soustraire)",
+            "Erreurs de fraction (dénominateur commun, inversion, modification du dénominateur, conversion de nombre mixte)",
+            "Erreurs décimales (alignement des virgules, placement de la virgule)"
+          ],
+          "remediation_approach": "Remobiliser la technique dans des cas classiques, identifier les spécificités de la tâche, se concentrer sur la correction des procédures techniques, et clarifier les attentes du contrat didactique."
+        },
+        {
+          "category": "Erreurs de justification et de communication",
+          "description": "L'élève choisit et applique correctement la technique, mais la justification théorique ou la communication du résultat est incorrecte, insuffisante ou non conforme aux conventions.",
+          "examples": [
+            "Justification proposée incorrecte (ex: énoncer Pythagore au lieu de sa réciproque)",
+            "Justifications proposées non suffisantes (ex: ne pas expliciter les hypothèses d'un théorème)",
+            "Problème de communication (non-respect des règles formelles de notation ou de formulation)"
+          ],
+          "remediation_approach": "Revoir le bloc technologico-théorique, préciser les raisons de l'incomplétude des justifications, et insister sur le respect des conventions de formulation mathématique."
+        },
+        {
+          "category": "Erreurs factuelles",
+          "description": "Ces erreurs surviennent lorsque les élèves manquent d'informations factuelles de base nécessaires à la résolution de problèmes mathématiques.",
+          "examples": [
+            "Non-maîtrise des notions de base en numération (ex: 3 + 2 = 7)",
+            "Signes mal identifiés (ex: 2 × 3 = 5)",
+            "Identification incorrecte des chiffres (ex: un 5 lu comme un 2)",
+            "Erreurs de comptage (ex: sauter un nombre)",
+            "Méconnaissance du vocabulaire mathématique (ex: numérateur, dénominateur)",
+            "Méconnaissance des formules mathématiques (ex: aire d'un cercle)"
+          ],
+          "remediation_approach": "Renforcer la mémorisation des faits de base, clarifier la signification des symboles et du vocabulaire, et enseigner les formules essentielles."
+        }
+      ]
+    },
+    "number_sense_components": [
+      {
+        "component": "Nombres naturels",
+        "description": "Compréhension des nombres entiers positifs, de leur représentation, de leurs relations et de leurs propriétés. Cela inclut la capacité de compter, de dénombrer, de lire, d'écrire, de représenter, de composer, de décomposer, de comparer, d'ordonner et de classifier les nombres naturels.",
+        "assessment_indicators": [
+          "Compte ou récite la comptine des nombres naturels (croissant/décroissant, par bonds)",
+          "Dénombre des collections réelles ou dessinées (coordonne geste et nombre, reconnaît l'aspect cardinal, groupe/regroupe)",
+          "Lit et écrit tout nombre naturel",
+          "Représente des nombres naturels de différentes façons (matériel, dessins, valeur de position)",
+          "Compose et décompose un nombre naturel (ex: 123 = 100 + 20 + 3)",
+          "Reconnaît des expressions équivalentes (ex: 52 = 40 + 12)",
+          "Compare et ordonne des nombres naturels",
+          "Décrit des régularités numériques (pairs, impairs, carrés, premiers, composés)",
+          "Situe des nombres naturels sur différents supports (grille, bande, droite numérique)",
+          "Reconnaît les propriétés des nombres naturels (pair/impair, carré/premier/composé)",
+          "Classifie des nombres naturels selon leurs propriétés",
+          "Fait une approximation d'une collection (estimer, arrondir)",
+          "Représente la puissance d'un nombre naturel"
+        ],
+        "development_sequence": "Développement progressif de la comptine et du dénombrement, vers le groupement et l'échange, puis la valeur de position. Introduction des propriétés et des régularités, et enfin la représentation des puissances. Les nombres traités augmentent en complexité (jusqu'à 1000, 100 000, 1 000 000) au fur et à mesure des cycles du primaire."
+      },
+      {
+        "component": "Fractions",
+        "description": "Compréhension des fractions comme parties d'un tout ou d'une collection, de leurs différentes significations (partage, division, rapport), de leur représentation et de leurs relations.",
+        "assessment_indicators": [
+          "Reconnaît des fractions dans des éléments du quotidien",
+          "Représente une fraction de différentes façons (tout, collection)",
+          "Associe une fraction à une partie d'un tout ou d'un groupe",
+          "Reconnaît différents sens de la fraction (partage, division, rapport)",
+          "Distingue le rôle du numérateur de celui du dénominateur",
+          "Lit et écrit une fraction",
+          "Compare une fraction à 0, à ½ ou à 1",
+          "Vérifie l'équivalence de deux fractions",
+          "Associe un nombre décimal ou un pourcentage à une fraction",
+          "Ordonne des fractions (même dénominateur, dénominateur multiple, même numérateur)",
+          "Situe des fractions sur un axe de nombres"
+        ],
+        "development_sequence": "Introduction des fractions à l'aide de matériel concret ou de schémas, en se concentrant d'abord sur les concepts plutôt que les calculs. Progression de la reconnaissance et de la représentation vers la comparaison, l'équivalence et l'ordonnancement. L'association avec les nombres décimaux et les pourcentages se fait aux cycles supérieurs."
+      },
+      {
+        "component": "Nombres décimaux",
+        "description": "Compréhension des nombres décimaux, de leur représentation, de leur valeur de position et de leurs relations avec les fractions et les pourcentages.",
+        "assessment_indicators": [
+          "Représente des nombres décimaux de différentes façons (concrètes ou imagées)",
+          "Reconnaît des représentations équivalentes de nombres décimaux",
+          "Lit et écrit des nombres en notation décimale",
+          "Comprend le rôle de la virgule",
+          "Compose et décompose un nombre décimal",
+          "Reconnaît des expressions équivalentes (ex: 12 dixièmes = 1 unité et 2 dixièmes)",
+          "Situe des nombres décimaux sur un axe de nombres (entre naturels, entre décimaux)",
+          "Compare et ordonne des nombres décimaux",
+          "Fait une approximation (estimer, arrondir, tronquer)",
+          "Associe une fraction ou un pourcentage à un nombre décimal"
+        ],
+        "development_sequence": "Introduction des nombres décimaux jusqu'à l'ordre des centièmes, puis des millièmes. Progression de la représentation et de la lecture/écriture vers la compréhension de la virgule, la composition/décomposition, la comparaison, l'ordonnancement et l'approximation. L'association avec les fractions et les pourcentages se fait aux cycles supérieurs."
+      }
+    ],
+    "intervention_principles": [
+      {
+        "principle": "Développement de stratégies cognitives et métacognitives",
+        "description": "Encourager les élèves à développer et à utiliser un répertoire personnel de stratégies pour la planification, la compréhension, l'organisation, l'élaboration, la régulation, la généralisation, la rétention et l'automatisation des processus mathématiques.",
+        "evidence": "Les stratégies cognitives et métacognitives sont intégrées au processus d'apprentissage et sont essentielles pour développer l'autonomie des élèves et leur capacité à utiliser les connaissances dans différents contextes [1]."
+      },
+      {
+        "principle": "Soutien à la planification",
+        "description": "Guider les élèves dans la planification de leurs tâches mathématiques, y compris l'identification des connaissances antérieures nécessaires, des informations pertinentes, la décomposition des problèmes en sous-problèmes, l'estimation du temps et l'identification des ressources.",
+        "evidence": "La planification aide les élèves à structurer leur approche des problèmes et à mobiliser les ressources nécessaires [1]."
+      },
+      {
+        "principle": "Amélioration de la compréhension",
+        "description": "Aider les élèves à clarifier le sens des termes mathématiques, à reformuler les questions, à identifier les données pertinentes et à utiliser des schémas pour représenter les étapes de la tâche.",
+        "evidence": "Une compréhension approfondie des termes et du but des questions est fondamentale pour éviter les erreurs et construire des solutions valides [1]."
+      },
+      {
+        "principle": "Organisation des informations",
+        "description": "Promouvoir l'utilisation de diverses méthodes d'organisation des données, telles que le regroupement, l'énumération, la classification, la réorganisation, la comparaison, l'utilisation de matériel concret, de schémas, de grilles ou de tableaux.",
+        "evidence": "L'organisation des informations aide les élèves à visualiser les liens entre les objets et les données, facilitant ainsi la résolution de problèmes [1]."
+      },
+      {
+        "principle": "Élaboration et connexion des connaissances",
+        "description": "Encourager les élèves à représenter mentalement ou par écrit les situations, à faire des liens avec des problèmes similaires, à dégager des données à partir de celles qui sont connues, à identifier les régularités et à choisir des stratégies appropriées (essais systématiques, travail à rebours, simplification, etc.).",
+        "evidence": "L'élaboration permet aux élèves de construire des modèles mentaux, de réutiliser des stratégies et de développer une compréhension plus profonde des concepts [1]."
+      },
+      {
+        "principle": "Régulation et auto-évaluation",
+        "description": "Développer la capacité des élèves à évaluer leur propre démarche, à vérifier leurs solutions, à identifier leurs forces et leurs difficultés, et à ajuster leurs méthodes en fonction des tâches.",
+        "evidence": "La régulation métacognitive est cruciale pour l'apprentissage autonome, permettant aux élèves de corriger leurs erreurs et d'améliorer leurs stratégies [1]."
+      },
+      {
+        "principle": "Généralisation des apprentissages",
+        "description": "Favoriser la capacité des élèves à identifier les ressemblances et les différences entre les exemples, à réutiliser des modèles, à appliquer des observations à de nouvelles situations et à dégager des règles générales.",
+        "evidence": "La généralisation est essentielle pour transférer les connaissances et les compétences à travers différents contextes mathématiques [1]."
+      },
+      {
+        "principle": "Stratégies de rétention",
+        "description": "Proposer des méthodes pour améliorer la mémorisation et la rétention des informations, telles que la répétition, le surlignage, la recopie, la création de listes de termes et de symboles.",
+        "evidence": "Les stratégies de rétention aident les élèves à consolider leurs connaissances et à les rendre accessibles pour une utilisation future [1]."
+      },
+      {
+        "principle": "Automatisation des processus",
+        "description": "Permettre aux élèves de s'exercer suffisamment pour automatiser les processus mathématiques, en suivant des modèles de solution et en comparant leurs démarches à celles de leurs pairs.",
+        "evidence": "L'automatisation libère des ressources cognitives pour des tâches plus complexes et améliore l'efficacité de la résolution de problèmes [1]."
+      },
+      {
+        "principle": "Communication mathématique",
+        "description": "Encourager les élèves à communiquer leur démarche et leurs résultats en utilisant divers modes de représentation (mots, symboles, figures, diagrammes, tableaux) et à expérimenter différentes façons de transmettre leur message mathématique.",
+        "evidence": "La communication est une compétence essentielle en mathématiques, permettant aux élèves d'exprimer leur pensée, de justifier leurs raisonnements et de comprendre ceux des autres [1]."
+      },
+      {
+        "principle": "Soutien aux stratégies affectives",
+        "description": "Intégrer des éléments qui aident les élèves à gérer leurs émotions, à maintenir leur motivation, à diminuer leur anxiété et à prendre des risques dans l'apprentissage des mathématiques.",
+        "evidence": "Les facteurs affectifs jouent un rôle significatif dans l'engagement et la réussite des élèves en mathématiques [1]."
+      },
+      {
+        "principle": "Gestion des ressources",
+        "description": "Apprendre aux élèves à identifier et à utiliser efficacement les ressources disponibles, y compris l'aide des pairs ou des enseignants, la documentation (lexique, TIC) et le matériel de manipulation.",
+        "evidence": "Une gestion efficace des ressources contribue à l'autonomie de l'élève et à sa capacité à surmonter les difficultés [1]."
+      }
+    ]
+  }
+}
