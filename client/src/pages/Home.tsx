@@ -7,6 +7,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import AstronautHero from "@/components/AstronautHero";
 import { ArrowRight, BookOpen, Brain, MapPin, Shield, Zap, Users, BarChart3, Compass, GraduationCap, Star, Stethoscope, Map } from "lucide-react";
 
 const principles = [
@@ -70,35 +71,41 @@ export default function Home() {
         </div>
 
         <div className="container relative z-10 pt-24 pb-20">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-amber/20 border border-amber/30 text-amber text-xs font-display font-semibold px-3 py-1.5 rounded-full mb-6 animate-fade-up">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
-              Master Planning Document v1.0 — June 2026
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 bg-amber/20 border border-amber/30 text-amber text-xs font-display font-semibold px-3 py-1.5 rounded-full mb-6 animate-fade-up">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
+                Master Planning Document v1.0 — June 2026
+              </div>
+
+              <h1 className="font-display font-bold text-parchment text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6 animate-fade-up delay-100">
+                Every child has a<br />
+                <span className="text-amber">mathematical</span><br />
+                profile.
+              </h1>
+
+              <p className="font-body text-parchment/80 text-lg md:text-xl leading-relaxed mb-8 animate-fade-up delay-200">
+                Numbernaut is the world's first fully offline numeracy mastery and remediation platform for elementary school students — scientifically grounded, explainable, and built for every Canadian classroom.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
+                <Link
+                  href="/platform"
+                  className="inline-flex items-center justify-center gap-2 bg-amber text-charcoal font-display font-semibold px-6 py-3 rounded-md hover:bg-amber-light transition-colors active:scale-95 text-sm"
+                >
+                  Explore the Platform <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/pedagogy"
+                  className="inline-flex items-center justify-center gap-2 border border-parchment/30 text-parchment font-display font-medium px-6 py-3 rounded-md hover:bg-white/10 transition-colors text-sm"
+                >
+                  Read the Pedagogy
+                </Link>
+              </div>
             </div>
 
-            <h1 className="font-display font-bold text-parchment text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6 animate-fade-up delay-100">
-              Every child has a<br />
-              <span className="text-amber">mathematical</span><br />
-              profile.
-            </h1>
-
-            <p className="font-body text-parchment/80 text-lg md:text-xl leading-relaxed mb-8 animate-fade-up delay-200">
-              Numbernaut is the world's first fully offline numeracy mastery and remediation platform for elementary school students — scientifically grounded, explainable, and built for every Canadian classroom.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
-              <Link
-                href="/platform"
-                className="inline-flex items-center justify-center gap-2 bg-amber text-charcoal font-display font-semibold px-6 py-3 rounded-md hover:bg-amber-light transition-colors active:scale-95 text-sm"
-              >
-                Explore the Platform <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/pedagogy"
-                className="inline-flex items-center justify-center gap-2 border border-parchment/30 text-parchment font-display font-medium px-6 py-3 rounded-md hover:bg-white/10 transition-colors text-sm"
-              >
-                Read the Pedagogy
-              </Link>
+            <div className="hidden lg:flex justify-center animate-fade-up delay-300">
+              <AstronautHero className="w-full max-w-sm drop-shadow-2xl" />
             </div>
           </div>
         </div>
