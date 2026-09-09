@@ -1,0 +1,244 @@
+{
+  "internal_taxonomy": {
+    "description": "Numbernaut conserve UNE seule taxonomie interne de micro-compétences (client/src/data/micro_skills.json, 572 compétences, IDs M001-M572). Chaque compétence est ancrée une fois pour toutes au code du curriculum de l'Ontario (champ ontario_strand_code), qui sert de colonne vertébrale de référence. Pour chaque nouvelle province ou pays, on ajoute une COUCHE DE CORRESPONDANCE (crosswalk) qui relie les codes ontariens déjà assignés aux référentiels de cette juridiction — on ne duplique jamais le contenu pédagogique (nom, description, critères de maîtrise, prérequis) par région.",
+    "reference_field": "ontario_strand_code",
+    "reference_source": "client/src/data/ontario_curriculum_2020.json"
+  },
+  "jurisdictions": [
+    {
+      "id": "ON",
+      "name": "Ontario, Canada",
+      "status": "primary_reference",
+      "curriculum_document": "The Ontario Curriculum, Grades 1-8: Mathematics (2020) + Ontario Kindergarten Curriculum (2026)",
+      "note": "Juridiction de référence : chaque micro-compétence porte directement son code ontario_strand_code. Voir client/src/data/ontario_curriculum_2020.json pour le détail des attentes globales."
+    },
+    {
+      "id": "BC",
+      "name": "Colombie-Britannique, Canada",
+      "status": "crosswalk_added",
+      "curriculum_document": "BC's Curriculum — Mathematics (Building Student Success)",
+      "sources": [
+        "https://curriculum.gov.bc.ca/curriculum/mathematics/introduction",
+        "https://curriculum.gov.bc.ca/curriculum/mathematics"
+      ],
+      "source_note": "La C.-B. n'utilise pas de codes numériques officiels comme l'Ontario ou les Common Core. Le curriculum est organisé en 'Big Ideas' (grandes idées), 'Curricular Competencies' et 'Content', regroupés en 5 domaines de la maternelle à la 9e année (computational fluency, number, patterns and relations, spatial sense, statistics and probability), plus la littératie financière intégrée de la maternelle à la 12e année. La correspondance ci-dessous se fait donc au niveau du domaine nommé, pas d'un code précis.",
+      "crosswalk": [
+        {
+          "ontario_strand_code": "A1",
+          "bc_domain": null,
+          "bc_domain_fr": null,
+          "match_quality": "none",
+          "note": "Les compétences sociales-affectives (bien-être en mathématiques) sont un ajout propre au curriculum ontarien 2020; la C.-B. les traite via ses Compétences essentielles transversales (Core Competencies) plutôt que dans le curriculum de mathématiques lui-même."
+        },
+        {
+          "ontario_strand_code": "B1",
+          "bc_domain": "Number",
+          "bc_domain_fr": "Nombre",
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "B2",
+          "bc_domain": "Computational Fluency",
+          "bc_domain_fr": "Fluidité de calcul",
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "C1",
+          "bc_domain": "Patterns and Relations",
+          "bc_domain_fr": "Régularités et relations",
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "C2",
+          "bc_domain": "Patterns and Relations",
+          "bc_domain_fr": "Régularités et relations",
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "C3",
+          "bc_domain": null,
+          "bc_domain_fr": null,
+          "match_quality": "none",
+          "note": "Le codage/algorithmique n'est pas un domaine distinct du curriculum de mathématiques de la C.-B.; il relève plutôt du curriculum ADST (Applied Design, Skills, and Technologies)."
+        },
+        {
+          "ontario_strand_code": "C4",
+          "bc_domain": "Patterns and Relations",
+          "bc_domain_fr": "Régularités et relations",
+          "match_quality": "moderate"
+        },
+        {
+          "ontario_strand_code": "D1",
+          "bc_domain": "Statistics and Probability",
+          "bc_domain_fr": "Statistique et probabilité",
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "D2",
+          "bc_domain": "Statistics and Probability",
+          "bc_domain_fr": "Statistique et probabilité",
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "E1",
+          "bc_domain": "Spatial Sense",
+          "bc_domain_fr": "Sens spatial",
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "E2",
+          "bc_domain": "Spatial Sense",
+          "bc_domain_fr": "Sens spatial",
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "F1",
+          "bc_domain": "Financial Literacy (embedded K-12)",
+          "bc_domain_fr": "Littératie financière (intégrée de la M à la 12e)",
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "K-CONT",
+          "bc_domain": "Kindergarten Big Ideas (les 5 domaines)",
+          "bc_domain_fr": "Grandes idées de la maternelle (les 5 domaines)",
+          "match_quality": "moderate",
+          "note": "La maternelle en C.-B. couvre les 5 domaines dès la première année scolaire, contrairement au continuum ontarien M-3e."
+        }
+      ]
+    },
+    {
+      "id": "US-CCSS",
+      "name": "États-Unis — Common Core State Standards for Mathematics",
+      "status": "crosswalk_added",
+      "curriculum_document": "Common Core State Standards for Mathematics (CCSSM), K-8",
+      "sources": [
+        "https://www.thecorestandards.org/Math/",
+        "https://learning.ccsso.org/wp-content/uploads/2022/11/ADA-Compliant-Math-Standards.pdf"
+      ],
+      "source_note": "Les Common Core utilisent des domaines codés par des lettres (ex: OA, NBT, NF, MD, G, RP, NS, EE, SP), chacun couvrant une plage précise d'années scolaires. Plusieurs états américains n'ont pas adopté ou ont depuis modifié les Common Core (ex: Texas, Virginie); cette correspondance vise le référentiel CCSSM tel que publié, à valider selon l'état ciblé.",
+      "crosswalk": [
+        {
+          "ontario_strand_code": "A1",
+          "ccss_domains": [],
+          "match_quality": "none",
+          "note": "Aucun domaine CCSSM dédié au bien-être socio-affectif en mathématiques; les Common Core se concentrent uniquement sur le contenu mathématique, pas les compétences socio-affectives."
+        },
+        {
+          "ontario_strand_code": "B1",
+          "ccss_domains": [
+            "CC (K)",
+            "NBT (K-5)",
+            "NF (3-5)",
+            "NS (6-8)"
+          ],
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "B2",
+          "ccss_domains": [
+            "OA (K-5)",
+            "NBT (K-5)",
+            "NS (6-8)",
+            "RP (6-7)"
+          ],
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "C1",
+          "ccss_domains": [
+            "OA (K-5)"
+          ],
+          "match_quality": "moderate"
+        },
+        {
+          "ontario_strand_code": "C2",
+          "ccss_domains": [
+            "OA (K-5)",
+            "EE (6-8)"
+          ],
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "C3",
+          "ccss_domains": [],
+          "match_quality": "none",
+          "note": "Le codage/algorithmique ne fait pas partie des Common Core Math; certains états ont des standards distincts de littératie numérique/informatique (ex: CSTA K-12 CS Standards)."
+        },
+        {
+          "ontario_strand_code": "C4",
+          "ccss_domains": [
+            "EE (6-8)",
+            "F (8)"
+          ],
+          "match_quality": "moderate"
+        },
+        {
+          "ontario_strand_code": "D1",
+          "ccss_domains": [
+            "MD (K-5)",
+            "SP (6-8)"
+          ],
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "D2",
+          "ccss_domains": [
+            "MD (K-5)",
+            "SP (6-8)"
+          ],
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "E1",
+          "ccss_domains": [
+            "G (K-8)"
+          ],
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "E2",
+          "ccss_domains": [
+            "G (K-8)",
+            "MD (K-5, mesure)"
+          ],
+          "match_quality": "strong"
+        },
+        {
+          "ontario_strand_code": "F1",
+          "ccss_domains": [],
+          "match_quality": "none",
+          "note": "Les Common Core Math n'incluent aucun domaine de littératie financière; plusieurs états appliquent des standards distincts (ex: Jump$tart Coalition National Standards in K-12 Personal Finance Education)."
+        },
+        {
+          "ontario_strand_code": "K-CONT",
+          "ccss_domains": [
+            "CC (K)",
+            "OA (K)",
+            "NBT (K, partiel)",
+            "MD (K)",
+            "G (K)"
+          ],
+          "match_quality": "strong"
+        }
+      ]
+    }
+  ],
+  "planned_next": [
+    {
+      "id": "QC",
+      "name": "Québec, Canada",
+      "status": "planned"
+    },
+    {
+      "id": "AB",
+      "name": "Alberta, Canada",
+      "status": "planned"
+    },
+    {
+      "id": "US-STATE-VARIANTS",
+      "name": "Variantes par État américain (hors Common Core)",
+      "status": "planned",
+      "note": "Ex: Texas (TEKS), Virginie (SOL) — à traiter au cas par cas car ces états ont leurs propres référentiels indépendants des Common Core."
+    }
+  ]
+}
